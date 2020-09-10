@@ -1,0 +1,19 @@
+.background-minor {
+  background-color: var(--minorColor);
+  color: #fff;
+}
+
+.background-grey {
+  background-color: var(--greyColor);
+  color: #888;
+}
+
+.background-linear-gradient {
+  background: linear-gradient(to right, var(--minorColor), var(--primaryColor));
+  color: #fff;
+}
+
+.background-linear-gradient-bottom {
+  background: linear-gradient(to bottom, var(--minorColor), var(--primaryColor));
+  color: #fff;
+}

@@ -1,0 +1,22 @@
+{
+  "pic": "cloud://prod-env-cqt7c.7072-prod-env-cqt7c-1301932434/reward/redpack.png",
+  "condition": {
+    "type": 1, 
+    "description": "满2人自动开奖",
+    "value": 2 
+  },
+  "status": 1, 
+  "sponsor": { 
+    "name": "照片精选", 
+    "description": "精选照片、明星照片、艺术照片、风景照片、名车照片", 
+    "avatar": "cloud://prod-env-cqt7c.7072-prod-env-cqt7c-1301932434/sponsor/gh_597e98070614_258.jpg", 
+    "appId": "wx14032d78e965211a"
+  },
+  "rewards": [{ "name": "2元现金红包", "winners": 1 },{ "name": "1元现金红包", "winners": 1 }], 
+  "type": 0,
+  "value": 3, 
+  "share": { 
+    "imageUrl": "cloud://prod-env-cqt7c.7072-prod-env-cqt7c-1301932434/reward/redpack-share.jpg" 
+  },
+  "display": 1 
+}

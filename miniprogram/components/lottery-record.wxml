@@ -1,0 +1,23 @@
+<!--components/lottery-record.wxml-->
+<wxs src="../is-framework/wxs/arrays.wxs" module="arrays" />
+
+<navigator wx:for="{{ records }}" wx:key="index" wx:for-item="record" hover-class="none" url="/pages/participate/index?lotteryId={{ record._id }}">
+  <view class="border-radius-10rpx" style="background-color: #ffffff;margin: 20rpx;padding: 10rpx;">
+    <view style="margin: 15rpx;background-color: #f6f6f6;padding: 30rpx 0;display: flex;align-items: center;">
+      <image src="{{ record.pic }}" style="width: 120rpx;height: 120rpx;display: block;margin-left: 30rpx;"></image>
+      <view style="display: flex;flex-direction: column;flex: 1;margin-left: 20rpx;">
+        <view style="font-size: 36rpx;">{{ arrays.join(record.rewards, '；') }}</view>
+        <!-- <view style="font-size: 30rpx;margin-top: 6rpx;color: #888;">{{ record.participatedTime }}</view> -->
+        <view style="font-size: 30rpx;color: #888;">{{ record.condition.description }}</view>
+      </view>
+    </view>
+  </view>
+</navigator>
+
+<is-no-data wx:if="{{ noRecords }}"></is-no-data>
+
+<view class="loading-wapper" wx:if="{{ !noMoreRecords }}">
+  <is-loading></is-loading>
+</view>
+
+<view class="no-more-records" wx:if="{{ noMoreRecords && !noRecords }}">没有更多了</view>

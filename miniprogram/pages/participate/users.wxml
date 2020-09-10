@@ -1,0 +1,11 @@
+<!--miniprogram/pages/participate/users.wxml-->
+
+<view style="text-align: center;margin: 20rpx 0;" wx:if="{{ total !== undefined }}">累计参与用户 {{ total }} 人</view>
+
+<view class="users" wx:if="{{ avatars.length > 0 }}">
+  <image mode="widthFix" lazy-load="{{ true }}" wx:for="{{ avatars }}" wx:key="index" wx:for-item="avatar" src="{{ avatar }}" style="display: block;width: 60rpx;height: auto;margin: 0 5rpx 10rpx 5rpx;background-color: #f6f6f6;"></image>
+</view>
+
+<view style="text-align: center;padding: 20rpx 0;" wx:if="{{ !noMoreData && !noData && querying }}">加载中...</view>
+<view class="link" hover-class="link-hover" style="text-align: center;padding: 20rpx 0;" wx:if="{{ !noMoreData && !noData && !querying }}" bindtap="onTapQueryMoreUsers">加载更多</view>
+<view style="text-align: center;color: #ccc;font-size: 28rpx;padding: 20rpx 0;" wx:if="{{ noMoreData && !noData }}">没有更多了</view>

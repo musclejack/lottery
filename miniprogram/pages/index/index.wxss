@@ -1,0 +1,18 @@
+/* miniprogram/pages/index/index.wxss */
+
+.loading-wapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.no-more-lotteries {
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ccc;
+  padding: 20rpx 0;
+}
+

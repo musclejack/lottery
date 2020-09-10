@@ -1,0 +1,51 @@
+/**app.wxss**/
+@import "/is-framework/wxss/core.wxss";
+@import "/is-framework/wxss/icon.wxss";
+@import "/is-framework/wxss/modal.wxss";
+@import "/wxss/bg.wxss";
+
+.main-plain-button {
+  border: var(--primaryColor) 1px solid;
+  color: var(--primaryColor);
+  padding: 15rpx 30rpx;
+}
+
+.main-tag {
+  font-size: 30rpx;
+  background-color: var(--primaryColor);
+  color: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 60rpx;
+}
+
+.grey {
+  color: var(--greyColor);
+}
+
+.color-primary {
+  color: var(--primaryColor);
+}
+
+.color-normal {
+  color: var(--normalColor);
+}
+
+button.primary {
+  color: #fff;
+  background: var(--primaryColor);
+  border: 1rpx solid var(--primaryColor);
+}
+
+button.normal {
+  color: var(--normalColor);
+  background: #fff;
+  border: 1rpx solid var(--normalColor);
+  box-shadow: 0 2px 6px 1px rgba(119, 119, 119, 0);
+}
+
+view.normal {
+  color: var(--normalColor);
+  background: #fff;
+  border: 1rpx solid var(--normalColor);
+  box-shadow: 0 2px 6px 1px rgba(119, 119, 119, 0);
+}

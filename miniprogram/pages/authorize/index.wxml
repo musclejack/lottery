@@ -1,0 +1,14 @@
+<!--miniprogram/pages/login/index.wxml-->
+
+<view class="container">
+  <view class="user-info">
+    <view class="header">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="authorize-title">申请获取以下权限</view>
+  <view class="authorize-subtitle">获得你的公开信息（昵称、头像等）</view>
+  <view>
+    <button class="authorize-button" bindgetuserinfo="onGetUserInfo" openType="getUserInfo">授权登录</button>
+  </view>
+</view>

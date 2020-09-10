@@ -1,0 +1,4 @@
+<!--is-framework/components/is-navigation.wxml-->
+<view class="nav bg-white">
+  <view class="item {{ index == navigationIndex ? 'selected' : '' }}" wx:for="{{ navigations }}" wx:for-item="navigation" wx:key="index" bindtap="tabSelect" data-navigation-index="{{ index }}">{{ navigation.name }}</view>
+</view>

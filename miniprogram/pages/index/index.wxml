@@ -1,0 +1,45 @@
+<!--miniprogram/pages/index/index.wxml-->
+
+<wxs src="../../is-framework/wxs/arrays.wxs" module="arrays" />
+
+<is-no-data wx:if="{{ noLottery }}"></is-no-data>
+
+<view class="border-radius-10rpx" style="margin: 20rpx;padding: 20rpx 30rpx;background-color: #fff;">
+  <swiper autoplay="{{ true }}" vertical="{{ true }}" circular="{{ true }}" interval="{{ swiperInterval }}" duration="{{ swiperDuration }}" current="{{ swiperIndex }}"style="height: 60rpx;pointer-events: none;">
+    <swiper-item wx:for="{{ broadcasts }}" wx:for-item="broadcast" wx:key="broadcastIndex">
+      <view style="display: flex;align-items: center;height: 100%;">
+         <lottery-broadcast-item broadcast="{{ broadcast }}"></lottery-broadcast-item>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view wx:for="{{ lotteries }}" wx:key="index" wx:for-item="lottery" class="border-radius-10rpx" style="background-color: #fff;margin: 0 20rpx;">
+<!-- <navigator hover-class="none" url="/pages/participate/index?lotteryId={{ lottery._id }}"> -->
+<view bindtap="goto" data-id="{{lottery._id}}">
+  <view class="flex" style="padding: 30rpx;">
+    <view style="background-color: #f6f6f6;width: 250rpx;height: 250rpx;display: flex;align-items: center;justify-content: center;">
+      <image src="{{ lottery.pic }}" style="width: 80%;display: block;height: auto;" mode="widthFix"></image>
+    </view>
+    <view class="flex-column" style="margin-left: 30rpx;flex: 1;">
+      <view>
+        <view style="color: #888;font-size: 28rpx;">{{ lottery.condition.description }}</view>
+        <view style="word-break: break-all;">{{ arrays.join(lottery.rewards, '；') }}</view>
+      </view>
+      <view style="flex: 1;display: flex;flex-direction: column;justify-content: flex-end;">
+        <view style="text-decoration: line-through;color: #888;padding: 10rpx 0;">¥{{ lottery.value }}</view>
+        
+          <view wx:if="{{ !lottery.has }}" class="text-align-center border-radius-50rpx background-linear-gradient padding-15rpx">0元抽奖</view>
+          <view wx:else class="normal border-radius-50rpx padding-15rpx" style="display: flex;align-items: center;justify-content: center;"><image src="/images/lottery/gift.png" style="width: 36rpx;height: 36rpx;margin-right: 8rpx;"></image>待开奖</view>
+      </view>
+    </view>
+  </view>
+  </view>
+        <!-- </navigator> -->
+</view>
+
+<view class="loading-wapper" wx:if="{{ !noMoreLottery }}">
+  <is-loading></is-loading>
+</view>
+
+<view class="no-more-lotteries" wx:if="{{ noMoreLottery && !noLottery }}">没有更多了</view>

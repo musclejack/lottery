@@ -1,0 +1,32 @@
+/* is-framework/components/is-navigation.wxss */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bg-white {
+  background-color: #fff;
+  color: #333;
+  padding: 15rpx 0;
+}
+
+.nav {
+  white-space: nowrap;
+  display: flex;
+}
+
+.nav .item {
+  flex: 1;
+  height: 66rpx;
+  display: inline-block;
+  line-height: 66rpx;
+  padding: 0 20rpx;
+  text-align: center;
+}
+
+.nav .item.selected {
+  border-bottom: 4rpx solid;
+  color: #ff4804;
+}

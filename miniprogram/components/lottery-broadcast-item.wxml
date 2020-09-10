@@ -1,0 +1,14 @@
+<!--components/lottery-broadcast-item.wxml-->
+<view class="broadcast">
+	<block wx:if="{{ broadcast.type === 'winner' }}">
+		<view>恭喜</view>
+		<view class="userInfo">
+			<image src="{{ broadcast.userInfo.avatarUrl }}" class="avatar"></image>
+			<view style="padding-left: 6rpx;">{{ broadcast.userInfo.nickName }}</view>
+		</view>
+		<view>抽中了{{ broadcast.reward }}</view>
+	</block>
+	<block wx:if="{{ broadcast.type === 'text' }}">
+		<view>{{ broadcast.text }}</view>
+	</block>
+</view>

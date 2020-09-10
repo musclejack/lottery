@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "is-navigation": "/is-framework/components/is-navigation",
+    "lottery-record": "/components/lottery-record",
+    "is-no-data": "/is-framework/components/is-no-data"
+  },
+  "navigationBarTitleText": "我的记录",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 100
+}

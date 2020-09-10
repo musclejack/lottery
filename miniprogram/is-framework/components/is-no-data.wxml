@@ -1,0 +1,8 @@
+<!--is-framework/component/view/is-no-data.wxml-->
+<view class="no-data-wapper">
+  <view class="no-data">
+    <image src="cloud://prod-env-cqt7c.7072-prod-env-cqt7c-1301932434/common/no-data-pic.png" class="image"></image>
+    <text class="text">{{ text }}</text>
+    <slot></slot>
+  </view>
+</view>

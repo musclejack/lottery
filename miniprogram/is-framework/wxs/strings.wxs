@@ -1,0 +1,9 @@
+var fill = function (number, length, filler) {
+  var s =  number.toString();
+  while (s.length < length) s = '' + filler + s;
+  return s;
+}
+
+module.exports = {
+  fill: fill
+}

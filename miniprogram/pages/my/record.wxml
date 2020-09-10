@@ -1,0 +1,4 @@
+<!--miniprogram/pages/my/record.wxml-->
+<is-navigation style="width: 100%;position: fixed;top: 0;" navigations="{{ navigations }}" navigationIndex="{{ navigationIndex }}" bindchange='onNavigationChange'></is-navigation>
+
+<lottery-record wx:for="{{ navigations }}" wx:key="index" wx:for-item="navigation" id="record-{{ navigation.type }}" type="{{ navigation.type }}" wx:if="{{ navigationType === navigation.type }}" style="padding-top: 92rpx;"></lottery-record>

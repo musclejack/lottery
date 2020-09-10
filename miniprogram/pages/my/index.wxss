@@ -1,0 +1,42 @@
+/* miniprogram/pages/my/index.wxss */
+
+page {
+  background-color: #f6f6f6;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30rpx;
+}
+
+.user-info .avatar {
+  box-sizing: border-box;
+  width: 138rpx;
+  height: 138rpx;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-info .nickname {
+  color: white;
+  display: block;
+  overflow: hidden;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 12rpx;
+}

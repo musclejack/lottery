@@ -1,0 +1,166 @@
+page {
+  --primaryColor: #ff4804;
+  --normalColor: #4d4d4d;
+  --minorColor: #fe7a46;
+  --greyColor: #f1f1f1;
+  --linkColor: #4d86c6;
+  background-color: #f6f6f6;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 32rpx;
+  line-height: 150%;
+  min-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--normalColor);
+  align-items: stretch;
+}
+
+view, scroll-view, swiper, button, input, textarea, label, navigator, image {
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 0;
+  padding: inherit;
+  background-color: transparent;
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+button::after {
+  border: 0;
+}
+
+.button-hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.button-hover.left {
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.button-hover.right {
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-row-justify-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+.border-radius-50rpx {
+  border-radius: 50rpx;
+}
+
+.border-radius-10rpx {
+  border-radius: 10rpx;
+}
+
+.padding-2rpx {
+  padding: 2rpx;
+}
+
+.padding-5rpx {
+  padding: 5rpx;
+}
+
+.padding-10rpx {
+  padding: 10rpx;
+}
+
+.padding-15rpx {
+  padding: 15rpx;
+}
+
+.padding-20rpx {
+  padding: 20rpx;
+}
+
+.padding-30rpx {
+  padding: 30rpx;
+}
+
+.font-size-28rpx {
+  font-size: 28rpx;
+}
+
+.font-size-30rpx {
+  font-size: 30rpx;
+}
+
+.font-size-36rpx {
+  font-size: 36rpx;
+}
+
+.font-size-38rpx {
+  font-size: 38rpx;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.margin-top-100rpx {
+  margin-top: 100rpx;
+}
+
+.padding-top-6rpx {
+  padding-top: 6rpx;
+}
+
+.padding-bottom-100rpx {
+  padding-bottom: 100rpx;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.link {
+  color: var(--linkColor);
+}
+
+.link-hover {
+  opacity: 0.7;
+}

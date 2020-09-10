@@ -1,0 +1,16 @@
+var indexOf = function(array, item, questionIndex) {
+  return (array === undefined || array === null) ? -1 : array.indexOf(item);
+}
+
+var join = function(array, separator) {
+  var names = [];
+  for (var index = 0; index < array.length; index++) {
+    names.push(array[index].name + '×' + array[index].winners);
+  }
+  return names.join(separator);
+}
+
+module.exports = {
+  indexOf: indexOf,
+  join: join
+}

@@ -1,0 +1,17 @@
+<!--miniprogram/pages/question/index.wxml-->
+<wxs src="../../is-framework/wxs/strings.wxs" module="strings" />
+
+<view>
+
+	<view class="rule">
+		<view class="item" wx:for="{{ questions }}" wx:key="index" wx:for-item="question" wx:for-index="questionIndex">
+			<view class="sequence-container">
+				<view class="sequence" style="">{{ strings.fill(questionIndex + 1, 2, 0) }}</view>
+			</view>
+			<view class="content-container">
+				<view>{{ question.content }}</view>
+			</view>
+		</view>
+	</view>
+
+</view>

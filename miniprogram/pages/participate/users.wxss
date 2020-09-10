@@ -1,0 +1,8 @@
+/* miniprogram/pages/participate/users.wxss */
+
+.users {
+  padding: 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

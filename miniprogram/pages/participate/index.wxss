@@ -1,0 +1,157 @@
+/* miniprogram/pages/participate/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.lottery-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: var(--primaryColor);
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom-left-radius: 30rpx;
+}
+
+.loading-wapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.continue {
+  margin: 20rpx 30rpx 0 30rpx;
+  padding: 20rpx;
+  background-color: var(--primaryColor);
+  color: #fff;
+}
+
+.participate-users {
+  text-align: center;
+  padding: 20rpx;
+  color: #555;
+}
+
+.participate-users::after {
+  content: "查看全部";
+  color: var(--linkColor);
+}
+
+.participate-btn {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 200rpx;
+  padding: 0;
+  border: 0;
+  position: relative;
+}
+
+.participate-btn text {
+  position: relative;
+  z-index: 33;
+}
+
+.participate-btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  animation: wave 1.5s ease-out infinite;
+}
+
+@-webkit-keyframes wave {
+  50%, 75% {
+    width: 230rpx;
+    height: 230rpx;
+  }
+
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  50%, 75% {
+    width: 230rpx;
+    height: 230rpx;
+  }
+
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+.users {
+  padding: 0rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottom-line {
+  height: 110rpx;
+  border-top: 1rpx solid #ece6d7;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 66;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.bottom-line button {
+  padding: 0;
+  width: 47%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-line button image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 8rpx;
+}
+
+.bottom-line button.primary {
+  color: #fff;
+  background: var(--primaryColor);
+  border: 1rpx solid var(--primaryColor);
+}
+
+.bottom-line button.normal {
+  color: #4d4d4d;
+  background: #fff;
+  border: 1rpx solid #4d4d4d;
+  box-shadow: 0 2px 6px 1px rgba(119, 119, 119, 0);
+}

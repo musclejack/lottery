@@ -1,0 +1,107 @@
+<!--miniprogram/pages/participate/index.wxml-->
+
+<block wx:if="{{ !loading }}">
+
+	<view class="border-radius-10rpx" style="position: relative;background-color: #f6f6f6;margin: 20rpx;height: 250rpx;line-height: 250rpx;display: flex;align-items: center;justify-content: center;">
+		<image lazy-load="{{ true }}" mode="widthFix" src="{{ lottery.pic }}" style="width: 30%;height: auto;display: block;margin: auto;"></image>
+		<view class="lottery-status">{{ lottery.status === -1 ? '已开奖' : (participated ? '已参与' : (lottery.status === 1 ? '进行中' : '状态异常') ) }}</view>
+	</view>
+
+	<view class="font-size-36rpx" style="margin: 20rpx;text-align: left;">
+		<view style="padding: 5rpx 0;" wx:for="{{ lottery.rewards }}" wx:key="index" wx:for-item="reward">{{ reward.name }}</view>
+	</view>
+
+	<view style="margin: 20rpx;position: relative;">
+		<text class="background-grey text-align-center border-radius-5rpx font-size-30rpx" style="padding: 15rpx 30rpx;">{{ lottery.condition.description }}</text>
+		<text class="font-size-30rpx" style="color: #888;margin-left: 30rpx;">{{ lottery.num }}人已参与</text>
+	</view>
+
+	<view class="border-radius-10rpx" style="background-color: #ffefeb;padding: 20rpx;margin: 20rpx;" bindtap="onTapSponsor">
+		<view class="flex" style="align-items: center;border-bottom: 1px solid #e7d8d3;padding-bottom: 30rpx;">
+			<image lazy-load="{{ true }}" show-menu-by-longpress="{{ true }}" src="{{ lottery.sponsor.avatar }}" style="width: 150rpx;height: 150rpx;display: block;"></image>
+			<view class="flex-column" style="flex: 1;padding-left: 30rpx;">
+				<view style="color: #3c3231;font-size: 36rpx;">{{ lottery.sponsor.name }}</view>
+				<view style="color: #998b8a;font-size: 30rpx;padding-top: 10rpx;">{{ lottery.sponsor.description }}</view>
+			</view>
+		</view>
+		<view class="flex" style="color: #ff4804;margin-top: 20rpx;">
+			<view>{{ lottery.sponsor.navigationText }}</view>
+			<view style="flex: 1;text-align: right;color: #888;">本轮抽奖赞助商</view>
+		</view>
+	</view>
+
+	<view wx:if="{{ lottery.status === -1 }}" class="text-align-center" style="margin: 60rpx auto 40rpx;">
+		<text class="main-plain-button" bindtap="onDisplayResultDialog">查看我的中奖状态</text>
+	</view>
+	<view wx:else class="flex-row-center">
+		<button hover-class="none" open-type="share" wx:if="{{ participated }}" style="width: 230rpx;height: 230rpx;margin: 60rpx auto 40rpx;display: flex;align-items: center;justify-content: center;">
+			<view class="border-radius-50 background-linear-gradient-bottom participate-btn">
+				<text>分享好友</text>
+			</view>
+		</button>
+		<view wx:else class="border-radius-50 background-linear-gradient-bottom participate-btn" style="margin: 60rpx auto 40rpx;" bindtap="lottery">
+			<text>参与抽奖</text>
+		</view>
+	</view>
+
+	<navigator url="/pages/participate/users?lotteryId={{ lotteryId }}" hover-class="link-hover" class="participate-users">已有{{ lottery.num }}人参与，</navigator>
+	<view class="users" wx:if="{{ participates.length > 0 }}">
+		<image mode="widthFix" lazy-load="{{ true }}" wx:for="{{ participates }}" wx:key="index" wx:for-item="participate" src="{{ participate.userInfo.avatarUrl }}" style="display: block;width: 60rpx;height: auto;margin: 0 5rpx 10rpx 5rpx;background-color: #f6f6f6;"></image>
+	</view>
+
+	<view style="margin: 20rpx;">
+		<image style="width: {{ brochure.width }}rpx;display: block;height: {{ brochure.height }}rpx;" wx:for="{{ lottery.brochures }}" wx:key="index" wx:for-item="brochure" src="{{ brochure.url }}" lazy-load="{{ true }}"></image>
+	</view>
+
+	<view style="padding: 20rpx 0 120rpx 0;">
+		<view style="color: #aaa;font-size: 28rpx;text-align: center;">永远相信美好的事情即将发生</view>
+	</view>
+
+	<view class="bottom-line">
+		<button class="primary" openType="share">
+			<image src="/images/lottery/weixin.png"></image>
+			分享抽奖
+		</button>
+		<button bindtap="onTapMore" class="normal">
+			<image src="/images/lottery/gift.png"></image>
+			参与更多抽奖
+		</button>
+	</view>
+
+	<view catchtouchmove="prevent" class="is-modal bottom-modal result-dialog {{ resultDialogDisplaying ? 'show' : '' }}" style="touch-action: none;">
+		<view class="is-dialog" catchtap="prevent">
+			<view style="height: 800rpx;display:flex;flex-direction:column;color: #2c2b27;">
+				<view style="padding: 40rpx 30rpx;display: flex;flex-direction: row;border-bottom: 1px solid #eee;">
+					<view style="font-size: 36rpx;font-weight: bold;">{{ matched === true ? '恭喜您中奖了！' : '未中奖，再接再厉，加油！' }}</view>
+					<view class="is-font icon-close" style="font-size: 60rpx;flex: 1;text-align: right;" bindtap="onHideResultDialog"></view>
+				</view>
+				<scroll-view scroll-y style="-webkit-overflow-scrolling: touch;font-size: 32rpx;height: calc(100% - 250rpx);">
+					<view style="padding: 30rpx;">
+						<view style="text-align: left;">幸运名单</view>
+						<block wx:for="{{ lottery.rewards }}" wx:key="index" wx:for-index="rewardIndex" wx:for-item="reward">
+							<view style="background-color: #fff0ed;padding: 20rpx 0;margin: 30rpx 0;">{{ reward.name }}</view>
+							<view wx:for="{{ lottery.winners[rewardIndex] }}" wx:key="index" wx:for-item="winner" class="flex-column" style="align-items: center;">
+								<image src="{{ winner.userInfo.avatarUrl }}" style="display: block;width: 132rpx;height: 132rpx;"></image>
+								<view style="padding: 10rpx;">{{ winner.userInfo.nickName }}</view>
+								<view class="main-tag">中奖用户</view>
+							</view>
+						</block>
+					</view>
+				</scroll-view>
+				<view wx:if="{{ !matched }}" class="continue" bindtap="onTapMore">继续抽奖</view>
+				<button wx:else open-type="contact" hover-class="none" style="width: 100%;" bindtap="onContact">
+					<view class="continue">联系客服</view>
+				</button>
+			</view>
+		</view>
+	</view>
+
+	<view wx:if="{{ subscribeAlwaysGuideDisplaying }}" style="width: 100%;height: 100%;position: fixed;background-color: rgba(0, 0, 0, .7);pointer-events: none;">
+		<image src="cloud://prod-env-cqt7c.7072-prod-env-cqt7c-1301932434/guide/subscribe-always-guide.gif" style="width: 750rpx;height: 318rpx;display: block;margin-top: 100rpx;"></image>
+	</view>
+
+</block>
+
+<view wx:if="{{ loading }}" class="loading-wapper">
+	<is-loading></is-loading>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "lottery-broadcast-item": "/components/lottery-broadcast-item",
+    "is-loading": "/is-framework/components/is-loading",
+    "is-no-data": "/is-framework/components/is-no-data"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 100
+}

@@ -1,0 +1,36 @@
+/* miniprogram/pages/question/index.wxss */
+
+.rule {
+  padding: 30rpx;
+  line-height: 1.2;
+}
+
+.rule .item {
+  position: relative;
+  padding: 20rpx 0;
+}
+
+.rule .item .sequence-container {
+  position: absolute;
+  top: 20rpx;
+  left: 0rpx;
+}
+
+.rule .item .sequence-container .sequence {
+  display: flex;
+  align-items: center;
+  padding: 6rpx 20rpx 4rpx 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+  background-color: var(--primaryColor);
+}
+
+.rule .item .content-container {
+  padding-left: 80rpx;
+}
+
+.rule .item .content-container .content {
+  font-size: 30rpx;
+  color: #333;
+}

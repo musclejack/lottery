@@ -1,0 +1,24 @@
+/* components/lottery-broadcast-item.wxss */
+
+.broadcast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.broadcast .userInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #888;
+  padding: 0 10rpx;
+}
+
+.broadcast .userInfo .avatar {
+  box-sizing: border-box;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+}

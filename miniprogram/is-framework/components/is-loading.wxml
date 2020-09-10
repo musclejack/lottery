@@ -1,0 +1,20 @@
+<!--is-framework/components/is-loading.wxml-->
+
+<view class="grids-loading" wx:if="{{ type === 'grids' }}">
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+</view>
+
+<view class="circle-loading" wx:else>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "is-loading": "/is-framework/components/is-loading"
+  },
+  "navigationBarTitleText": "抽奖详情"
+}

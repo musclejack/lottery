@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/local/index",
+    "pages/my/index",
+    "pages/authorize/index",
+    "pages/participate/index",
+    "pages/message/index",
+    "pages/my/record",
+    "pages/participate/users",
+    "pages/authorize/wxacode",
+    "pages/question/index"
+  ],
+  "window": {
+    "backgroundColor": "#f6f6f6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff4804",
+    "navigationBarTitleText": "抽奖助手",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#ff4804",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/tabBar-home.png",
+        "selectedIconPath": "images/tabBar/tabBar-home-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/tabBar/tabBar-my.png",
+        "selectedIconPath": "images/tabBar/tabBar-my-selected.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

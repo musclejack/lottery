@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "is-loading": "/is-framework/components/is-loading",
+    "is-no-data": "/is-framework/components/is-no-data"
+  }
+}

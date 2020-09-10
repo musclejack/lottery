@@ -1,0 +1,25 @@
+/* is-framework/component/view/is-no-data.wxss */
+
+.no-data-wapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-data .image {
+  width: 347rpx;
+  height: 203rpx;
+}
+
+.no-data .text {
+  padding-top: 30rpx;
+}
